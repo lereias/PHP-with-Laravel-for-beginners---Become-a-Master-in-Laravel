@@ -1,0 +1,38 @@
+- download XAMPP
+  ~ lecurer use 7.4.4 PHP
+  ~ we use 8.1.6 PHP
+
+- download git
+  ~ we use git version 2.36.0.windows.1
+
+- download an IDE:
+  ~ PhpStorm
+  ~ Visual Studio Code <- we use this one
+
+- download Composer
+  ~ composer is used for php packages
+  ~ Select php.exein xampp/php
+
+- php -v in Git Bash
+
+- select git bash in terminal in VS Code
+
+- put the directory where mysql is (C:\xampp\mysql\bin) in PATH under 
+  User Variables in Environment Variables
+
+- download node.js
+  ~ node.js is a Javascript runtime
+  ~ we will need it for Javascript packages (npm - node package manager)
+
+  ~ lecturer use node v12.16.2
+  ~ lecturer use npm 6.14.4
+
+  ~ we use node v16.14.2
+  ~ we use npm 8.5.0
+
+- install Laravel
+  ~ go to git bash and do composer create-project laravel/laravel <name of project>
+  * in this course, the lecturer uses laravel 7
+    o composer create-project laravel/laravel="7.*" <name of project>
+  * we use laravel 9
+  ~ use php artisan serve to check the project on server

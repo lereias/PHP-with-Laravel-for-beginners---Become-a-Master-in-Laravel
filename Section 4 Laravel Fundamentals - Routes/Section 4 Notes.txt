@@ -1,0 +1,88 @@
+* app>Http>routes no longer exist in laravel 7. There is a folder named
+  routes in the root instead
+*routes>web.php is where the routes is at
+
+Laravel Structure Overview
+
+app folder
+- main folder for our application
+- models
+- controllers
+
+bootstrap folder
+- where application is bootstrapped/start/get files on other folders
+
+configuration folder
+- all configuration files are located
+
+database folder
+- keep your migrations
+- create tables
+- create files where we test a lot of data
+
+public folder
+- public files directory
+- main public area of the app
+
+resources folder
+- the files needed to be compiled are located here
+* compilation is done using webpack 
+
+routes folder
+- where all our routes are found
+* app>Http>routes is now here
+- apis
+
+storage folder
+tests folder
+
+vendor folder
+- all files downloaded using the composer
+
+.env
+- keep all sensitive information
+
+.gitignore
+- ignore files when pushing the app to repositories
+
+artisan
+- program that generate folders, tables, controller classes, scaffolding
+
+composer.json
+- download references of the packages download in composer
+
+package.json
+- downlaod references of the packages download in npm
+
+server.php
+- wraps around the built-in php server
+
+webpack.mix.js
+- a wrapper as well
+- wraps around the functionalities of webpack
+
+
+
+- create some routes in routes/web.php
+
+Route::get('/about', function () {
+    return "Hi about page";
+});
+
+Route::get('/contact', function () {
+    return "Hi I am contact";
+});
+
+//pass parameters
+Route::get('/post/{id}/{name}', function ($id, $name) {
+    return "This is post number " . $id . " " . $name;
+});
+
+//naming a route
+//name it to admin.home
+Route::get('admin/posts/example', array('as'=>'admin.home', function () {
+    $url = route('admin.home');
+    return "this url is " . $url;
+}));
+
+//use php artisan route:list in terminal to see admin/posts/example is named as admin.home

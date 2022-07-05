@@ -1,0 +1,61 @@
+- create a layouts folder in resources/views
+- create app.blade.php in resources/views/layouts
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        @yield('content')
+    </div>
+
+        @yield('footer')
+    
+</body>
+</html>
+
+- replace all content in post.blade.php under resources/views
+<!--including everything inside layouts/app or layouts.app-->
+@extends('layouts.app')
+
+<!--to put info in yield('content') in app.blade.php in resources/view/layouts-->
+@section('content')
+    <h1>Post Page {{$id}} {{$name}} {{$password}} </h1>
+@stop
+
+- add an array variable in contact method in PostsController in App/Http/Controllers/PostsController.php
+* content of these array will be displayed using @foreach
+
+public function contact() {
+    $people = ['Edwin', 'Jose', 'James', 'Peter', 'Maria'];
+    return view('contact', compact('people'));
+}
+
+- replace all content in contact.blade.php under resoureces/views
+<!--including everything inside layouts/app or layouts.app-->
+@extends('layouts.app')
+
+<!--to put info in yield('content') in app.blade.php in resources/view/layouts-->
+@section('content')
+    <h1>Contact Page</h1>
+    @if (count($people))
+        <ul>
+        @foreach ($people as $person)
+            <li>{{$person}}</li>
+        @endforeach
+        </ul>
+    @endif
+@stop
+
+@section('footer')
+    {{-- <script>alert("Hello visitor")</script> --}}
+@stop
+
+* for more information go to this link:
+  https://laravel.com/docs/9.x/blade

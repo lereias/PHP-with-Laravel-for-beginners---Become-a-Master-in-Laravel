@@ -1,0 +1,23 @@
+PHP with Laravel for beginners - Become a Master in Laravel
+By: Edwin Diaz
+
+
+* Prerequisite is OOP PHP
+
+* Laravel is a PHP framework who uses MVC architecture
+* A framework is the underline system (methods, classes) for that install
+* An architecture is the design pattern that a framework uses
+
+* MVC
+  ~ Model
+    o Classes
+    o Deals with the database
+
+  ~ View
+    o Classes/Methods
+    o Deals with the HTML
+
+  ~ Controller
+    o Classes
+    o The middle-man between Model and View
+    o e.g. gets information in database using model and displays it in view

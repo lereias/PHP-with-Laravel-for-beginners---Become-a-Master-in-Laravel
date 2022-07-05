@@ -1,0 +1,42 @@
+* controllers control the information coming from database (models) then
+  displaying it to views and information coming from views then storing to
+  database
+* Controllers are in app/Http/Controllers
+* namespace is used to differentiate functions
+* namespace organizes your code into sections
+* use is used to import functions
+* use is used to import class from different namespace into the current namespace
+* check PHP Manual website to learn more:
+  http://php.net/manual/en/language.namespaces.php
+
+- create a new controller named PostsController
+  ~ php artisan make:controller PostsController
+  * if you want to create a controller with CRUD, do this:
+  ~ php artisan make:controller --resource PostsController
+
+- use your controller in the routes/web.php to use that controller
+  Place this on top of routes/web.php
+
+  use App\Http\Controllers\PostsController;
+
+//use the PostsController and go to index method
+//Route::get('/post', [PostsController::class, 'index']);
+
+//pass a parameter to the index method in the PostsController controller
+
+in routes/web.php
+// Route::get('/post/{id}', [PostsController::class, 'index']);
+
+in app/Http/Controllers/PostsController.php
+public function index($id)
+{
+    //
+    return "Id is " . $id;
+}
+
+// creates routes for all methods created after make:controller --resource in the PostsController Controller
+// check it with php artisan route:list
+Route::resource('posts', 'App\Http\Controllers\PostsController');
+
+* to check if it is working, apply a return to each method in app/Http/Controllers/PostsController.php
+  and go to that url directory
